@@ -1,6 +1,6 @@
 # LexImpact prix carburants
 
-Agrège les prix des carburants TTC par mois, par ans et par régions ou France entière dans des fichiers CSV.
+Agrège les prix des carburants TTC par mois, par an et par région ou France entière dans des fichiers CSV.
 
 ## Notebook_INSEE
 
@@ -32,19 +32,19 @@ cd prix-carburants
 
 ### Création de l'environnement virtuel et installation des packages (Linux)
 
-Ces scripts nécessitent Python3, Jupyter et Pandas.
+Ces scripts nécessitent Python3, Jupyterlab et Pandas.
 
 ```shell
 python3 -m venv .venv
 source .venv/bin/activate
-pip install jupyter notebook
+pip install jupyterlab
 pip install pandas
 ```
 
 ### Lancement
 
 ```shell
-jupyter notebook
+jupyter-lab
 ```
 
 ### Utilisation
@@ -55,7 +55,7 @@ Pour les prix agrégé par région, par moi et par année, ouvrir [notebook_gouv
 
 **ATTENTION:** Il faut créer un compte sur le site du catalogue des APIs de l'INSEE, et créer un token pour utiliser l'API "[Métadonnées - V1](https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/item-info.jag?name=M%C3%A9tadonn%C3%A9es&version=V1&provider=insee)" (Le token fonctionne 7 jours). Le token devra étre intégré directement dans le notebook.
 
-### PS: Les fichiers CSV sont disponible directement sans utiliser le code.
+**REMARQUE:** Les fichiers CSV sont disponible directement sans utiliser le code.
 
 ## Copyright
 

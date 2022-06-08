@@ -1,67 +1,61 @@
-# LexImpact prix carburants
+# LexImpact fuel prices
 
-Agrège les prix des carburants TTC par mois, par ans et par régions ou France entière dans des fichiers CSV.
+Aggregates fuel prices including TVA per month, per year and per region or France in CSV files.
 
-Démonstration, exemple d'utilisation : TODO: Lien vers les notebooks
+## notebook_INSEE
 
-## Notebook_INSEE
+Retrieves all available fuel prices (SP 95, SP 98, super leaded, gasoil, SP E10) on the INSEE website.
 
-Recupère l'integralité des prix du carburant TTC disponible (SP 95, SP 98, super plombé, gasoil, SP E10) sur le site de l'INSEE.
+Creates 2 CSV files, fuel prices per year, in liter and in hectoliter.
 
-Créer 2 fichiers CSV, des prix par an des carburants, en litre et en héctolitre.
+Create 2 CSV files, of the prices of fuels per month, in liter and in hectoliter.
 
-Créer 2 fichiers CSV, des prix par mois des carburants, en litre et en héctolitre.
+## notebook_gouv
 
+Retrieves all available fuel prices, including VAT, by service station, fuel type (SP 95, SP 98, E85, diesel, SP E10, GPLc) and by day, on the site website [prix-carburant.gouv.fr](https://www.prix-carburants.gouv.fr/).
 
-## Notebook_gouv
+Finds the region code of each gas station (using APIs, and starting from the latitude and longitude and/or the postal code, to find the citycode, then the departement code, then the region code).
 
-Recupère l'integralité des prix du carburant TTC disponible, par station service, type de carburant (SP 95, SP 98, E85, gasoil, SP E10, GPLc) et par jour, sur le site [prix-carburant.gouv.fr](https://www.prix-carburants.gouv.fr/).
+Creates 1 CSV file, of the aggregated fuel prices by region and by year, in liter.
 
-Retrouve le code région de chaque station service (à l'aide d'API, et partant de la latitude et la longitude et/ou du code postal).
-
-Créer 1 fichier CSV, des prix par région et par an des carburants, en litre.
-
-Créer 1 fichier CSV, des prix par région et par mois des carburants, en litre.
+Create 1 CSV file, of the fuel prices by region and by month, in liter.
 
 ## Installation
-
-### Clonage
+###  cloning
 
 ```shell
 git clone https://git.leximpact.dev/leximpact/prix-carburants.git
 cd prix-carburants
 ```
+### Creation of the virtual environment and installation of packages (Linux)
 
-### Création de l'environnement virtuel et installation des packages
-
-Ces scripts nécessitent Python3, Jupyter et Pandas.
+These scripts require Python3, Jupyterlab and Pandas.
 
 ```shell
 python3 -m venv .venv
 source .venv/bin/activate
-pip install jupyter notebook
+pip install jupyterlab
 pip install pandas
 ```
 
-### Lancement
+### Application
 
 ```shell
-jupyter notebook
+jupyter-lab
 ```
 
-### Utilisation
+For prices by month and year from INSEE, open [notebook_insee.prix_carburant.ipynb](./notebook_INSEE/prix_carburant.ipynb).
 
-Pour les prix par mois et par années de l'INSEE, ouvrir [notebook_insee.prix_carburant.ipynb](./notebook_INSEE/prix_carburant.ipynb).
+For aggregate prices by region, month, and year, open [notebook_gouv.fuel_price.ipyn]().
 
-Pour les prix agrégé par régions mois et années de , ouvrir [notebook_gouv.prix_carburant.ipyn]()
+**WARNING:** It is necessary to create an account on the INSEE APIs catalog website, and create a token to use the API "[Metadata - V1](https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/item-info.jag?name=M%C3%A9tadonn%C3%A9es&version=V1&provider=insee)" (The token works for 7 days). The token will have to be integrated directly in the notebook.
 
-**ATTENTION:** Il faut on créer un compte sur le site du catalogue des APIs de l'INSEE, et créer un token pour utiliser l'API "[Métadonnées - V1](https://api.insee.fr/catalogue/site/themes/wso2/subthemes/insee/pages/item-info.jag?name=M%C3%A9tadonn%C3%A9es&version=V1&provider=insee)" (Le token fonctionne 7 jours). Le token devra étre intégré dans le notebook.
-
+**REMARK:** CSV files are available directly without using the code.
 
 ## Copyright
 
-LexImpact Prix carburants est un logiciel libre sous [licence GNU Affero General Public License](./LICENSE.md).
+LexImpact Fuel Prices is a free software under [licence GNU Affero General Public License](./LICENSE.md).
 
-Copyright (c) 2022 Assemblée nationale
+Copyright (c) 2022 French National Assembly
 
-Auteur : Kendrick <herzbergkendrick@gmail.com>
+Author : Kendrick Herzberg, <herzbergkendrick@gmail.com>
