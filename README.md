@@ -29,13 +29,14 @@ cd prix-carburants
 ```
 ### Creation of the virtual environment and installation of packages (Linux)
 
-These scripts require Python3, Jupyterlab and Pandas.
+These scripts require Python3, Jupyterlab and Pandas and requests.
 
 ```shell
 python3 -m venv .venv
 source .venv/bin/activate
 pip install jupyterlab
 pip install pandas
+pip install requests
 ```
 
 ### Application
