@@ -16,10 +16,11 @@ Retrieves all available fuel prices, including VAT, by service station, fuel typ
 
 Finds the region code of each gas station (using APIs, and starting from the latitude and longitude and/or the postal code, to find the citycode, then the departement code, then the region code).
 
-Creates 1 CSV file, of the aggregated fuel prices by region and by year, in liter.
+Creates 2 CSV file, of the aggregated fuel prices by region and by year, in liter and in hectoliter.
 
-Create 1 CSV file, of the fuel prices by region and by month, in liter.
+Create 2 CSV file, of the fuel prices by region and by month, in liter and in hectoliter.
 
+Create 2 files of aggregated prices at the national level to be able to check the accuracy compared to the data of the INSEE.
 ## Installation
 ###  cloning
 

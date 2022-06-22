@@ -21,6 +21,8 @@ Crée 1 fichier CSV, des prix agrégé des carburants par région et par an, en 
 
 Crée 1 fichier CSV, des prix des carburants par région et par mois, en litre.
 
+Crée 2 fichiers de prix agrégés au niveau national afin de pouvoir vérifier l'exactitude par rapport aux données de l'INSEE
+
 ## Installation
 
 ### Clonage
@@ -32,13 +34,14 @@ cd prix-carburants
 
 ### Création de l'environnement virtuel et installation des packages (Linux)
 
-Ces scripts nécessitent Python3, Jupyterlab et Pandas.
+Ces scripts nécessitent Python3, Jupyterlab, Pandas et requests.
 
 ```shell
 python3 -m venv .venv
 source .venv/bin/activate
 pip install jupyterlab
 pip install pandas
+pip install requests
 ```
 
 ### Lancement
